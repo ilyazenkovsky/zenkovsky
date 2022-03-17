@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h4>Пользователь: <span class="member-name"></span> <br /> Добро пожаловать!</h4>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 m2">
+      </div>
+      <div class="col s12 m8">
+        <div class="row">
+          <div class="col s12 m6">
+            <h5>Список задач</h5>
+          </div>
+        </div>
+        </br>
+        <div class="row">
+          <div class="col s12 m3">
+            <button type="submit" id="btnAll" class="btn btn-small">Все задачи</button>
+          </div>
+          <div class="col s12 m3">
+            <button type="submit" id="btnMe" class="btn btn-small">Мои задачи</button>
+          </div>
+          <div class="col s12 m3">
+            <button type="submit" id="btnNone" class="btn btn-small">Неназначенные</button>
+          </div>
+          <div class="col s12 m3">
+            <button type="submit" id="btnDone" class="btn btn-small">Завершенные</button>
+          </div>
+          <div class="col s12 m2" style="margin-top: 10px">
+            <a id="btnNew" class="btn-floating btn-large waves-effect waves-light teal"><i
+                class="material-icons">add</i></a>
+          </div>
+        </div>
+        <ul class="collection">
+          {{#each tasks}}
+          {{#unless completed}}
+          <li class="collection-item avatar" data-id="{{this.id}}">
+            <i class="material-icons circle {{this.[assignee.color]}}"></i>
+            <div class="row">
+              <div class="col s12 m8">
+                <p>{{this.title}}</p>
+              </div>
+              <div class="col s12 m4">
+                <p class="secondary-content"><span id="task-id">{{this.id}}</span></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m8">
+                <p>Назначен на: {{this.[assignee.firstName]}} {{this.[assignee.lastName]}}</p>
+              </div>
+              <div class="col s12 m4">
+                <p>Готова: {{this.estCompletion}}</p>
+              </div>
+            </div>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+        </br>
+        </br>
+      </div>
+      <div class="col s12 m2">
+      </div>
+    </div>
+  </div>
+</div>
