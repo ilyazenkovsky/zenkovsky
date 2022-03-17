@@ -1,4 +1,4 @@
-escribe('User Endpoints', () => {
+describe('User Endpoints', () => {
   it('GET /list should show all task’, async () => {
     const res = await requestWithSupertest.get('/list');
       expect(res.status).toEqual(200);
@@ -8,7 +8,7 @@ escribe('User Endpoints', () => {
       expect(res.body).toHaveProperty('id’')
   });
 
-escribe('User Endpoints', () => {
+describe('User Endpoints', () => {
   it('GET /task+{id} should detailed information about the task, async () => {
     const res = await requestWithSupertest.get('/task+{id}’);
       expect(res.status).toEqual(200);
@@ -26,7 +26,7 @@ escribe('User Endpoints', () => {
   });
 
 
-escribe('User Endpoints', () => {
+describe('User Endpoints', () => {
   it('GET /done should completed tasks of a specific user, async () => {
     const res = await requestWithSupertest.get('/done);
       expect(res.status).toEqual(200);
